@@ -14,7 +14,7 @@
           :key="index"  
           @mouseenter="fn.navSelected(index)"
           @mouseleave="fn.navLeave"
-          @click="fn.navClick(item,index)"
+          @click.stop="fn.navClick(item,index)"
           :class="{navSelected:data.showIndex === index}"
         >
           <div class="name">{{item.naem}}</div>
@@ -26,6 +26,7 @@
               v-for="(citem,cindex) in item.children" 
               :class="{SelectedChildren:data.ChildrenshowIndex === cindex}"
               :key="cindex"
+              @click.stop=""
               @mouseenter="fn.navChildrenshowIndex(cindex)"
             >
               {{citem.name}}
@@ -75,12 +76,15 @@
 import { reactive } from 'vue'
 import store from './store'
 import { useRouter } from 'vue-router';
+import axios from 'axios'
 export default {
   name: 'App',
   components: {
    
   },
-  setup(){
+  
+   setup(){
+     
     
     const router = useRouter()
 
@@ -174,6 +178,13 @@ export default {
         store.commit('setNavtitle',item.naem)
       }
     })
+    const get = {
+      getNav : async () => {  
+         const  res = await axios.get('api/navigationBar/list') 
+         console.log(res)
+      }
+    }
+    get.getNav()
     //静态配置项
     const config = {}
     return {

@@ -259,7 +259,6 @@ import 'swiper/css/autoplay';
 import "swiper/css/grid";
 import { Navigation, Pagination, Scrollbar, A11y,Autoplay,Grid } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/vue";
-// import { useRouter } from 'vue-router';
 export default {
     name: "IndexView",
     components:{
@@ -510,6 +509,7 @@ export default {
 </script>
 
 <style lang="less">
+/* 轮播图部分样式不能写在 scoped 中 */
 /* 首页头部轮播图 */
     .swiper {
         .img-view {
@@ -1355,8 +1355,10 @@ export default {
                         height: 113px;
                     }
                     .text {
-                        transform: translateX(25%);
                         .name {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
                             margin-top: 28px;
                             font-size: 25px;
                             color: rgba(77, 180, 88, 1);
