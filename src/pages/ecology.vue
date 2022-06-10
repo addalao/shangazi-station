@@ -1,0 +1,3 @@
+<template>
+ecology
+</template>
