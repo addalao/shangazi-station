@@ -1929,9 +1929,7 @@ export default {
                             display: none;
                         }
                     }
-                    .mnilist {
-
-                    }
+                  
                 }
             }
             .bottomInfo {
