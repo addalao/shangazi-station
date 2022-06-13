@@ -164,6 +164,10 @@
                     :grid="{
                     rows: 2,
                     }"
+                    :autoplay='{
+                        delay: 4500,
+                        disableOnInteraction: false,
+                    }'
                     :spaceBetween="30"
                     :pagination="gridPagination"
                     :modules="modules"

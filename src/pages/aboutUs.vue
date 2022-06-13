@@ -3,7 +3,7 @@
         <div class="topbackground">
             
         </div>
-        <!--  -->
+        <!-- 关于我们 -->
         <div class="aboutUs">
             <div class="title">
                 <div class="name">
@@ -71,13 +71,12 @@
                 <img class="max" src="../assets/AboutUs/transfer1.png" alt="">
                 <img class="min" src="../assets/AboutUs/minTransfer1.png" alt="">
             </div>
-            
         </div>
-         <!--  -->
+         <!-- 我们的服务范围 -->
         <div class="scopeOfServices">
             <div class="title">
                 <div class="name">
-                   为什么<span>选择</span>我们
+                  我们的<span>服务范围</span>
                 </div>
                 <div class='ename max'>Why Choose Us</div>
             </div>
@@ -107,11 +106,107 @@
                 
             </div>
         </div>
+        <!-- 我们的优势 -->
+        <div class="ourStrengths">
+            <div class="title">
+                <div class="name">
+                  我们的<span>优势</span>
+                </div>
+                <div class='ename max'>Our Advantages</div>
+            </div>
+            <div class="introduce">
+                <div class="imgBox">
+                    <img src="../assets/AboutUs/ourStrengths1.png" alt="">
+                </div>
+                <div class="info">
+                    <div class="imgBox max">
+                        <img src="../assets/AboutUs/ourStrengths2.png" alt="">
+                    </div>
+                    <div class="info">
+                        高度重视产品自主产权，于济南建立研发中心，吸纳华北华中地区高层次人才，研发人员占比高达40%，
+                        以研发生产超过300件产品投入市场，拥有近保重专利及软件著作权，支持特定项目解决方案及产品定制。
+                        专注于农业物联网系统工程的技术研发、装备制造和应用推广，在全国各地落成数百个项目，
+                        主要覆盖新疆、黑龙江、河北、山东、湖南、甘肃、宁夏、云南、贵州、海南、河南、四川等农业大省，
+                        培育高科技、高品质和可持续发展的农业信息化产业体系，管理农田几十万亩，
+                        使智慧农业和农业远程在线服务实时响应植物需求，改善农业土壤污染现状，
+                        实现科学生产、精准管理，促进降本降耗，增产增效的目的.
+                    </div>
+                     <div class="minImgBox min">
+                        <img src="../assets/AboutUs/ourStrengths2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 企业风采 -->
+        <div class="appearance">
+            <div class="title">
+                <div class="name">
+                  企业<span>风采</span>
+                </div>
+                <div class='ename max'>Enterprise style</div>
+            </div>
+            <swiper :navigation="true" :modules="config.modules" class="mySwiper">
+                <swiper-slide>
+                    <img src="../assets/AboutUs/floor1.png" alt="">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="../assets/AboutUs/floor1.png" alt="">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="../assets/AboutUs/floor1.png" alt="">
+                </swiper-slide>
+                <div class="title">
+                    公司本部大楼
+                </div>
+            </swiper>
+        </div>
+         <!-- 底部 -->
+        <div class="bottomInfo">
+            <div class="info">
+                <div class="left max">
+                    <div class="itemBox" v-for="(item,index) in data.bottomList">
+                        <div class="title">{{item.title}}</div>
+                        <div class="list" v-for="(citem,index) in item.list">{{citem.name}}</div>
+                    </div>
+                </div>
+                <div class="minLeft min">
+                    <div class="title">
+                        联系我们
+                    </div>
+                    <div class="list">
+                        山嘎子官方微信公众号
+                    </div>
+                    <div class="list">
+                        山嘎子官方微信公众号
+                    </div>
+                    <div class="list">
+                        山嘎子官方微信公众号
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="QRCode">
+                        <img  src="../assets/QRCode1.png" alt="">
+                        <div class="name">山嘎子官方微信公众号</div>
+                    </div>
+                    <div class="QRCode">
+                        <img  src="../assets/QRCode2.png" alt="">
+                        <div class="name">山嘎子官方小程序</div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="VersionNumber">
+                ©Copyright 2017-2022   鲁ICP备1541743号-9
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import { reactive } from 'vue'
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
 export default {
     
     name: "aboutUs",
@@ -166,12 +261,54 @@ export default {
                     info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
                 },
             ],
+            bottomList:[
+                {
+                    title:'新闻中心',
+                    list:[
+                        {name:'智慧农业'},
+                        {name:'智慧水产养殖'},
+                        {name:'植保信息化'}
+                    ]
+                },
+                 {
+                    title:'新闻中心',
+                    list:[
+                        {name:'智慧农业'},
+                        {name:'智慧水产养殖'},
+                        {name:'植保信息化'}
+                    ]
+                },
+                 {
+                    title:'新闻中心',
+                    list:[
+                        {name:'智慧农业'},
+                        {name:'智慧水产养殖'},
+                        {name:'植保信息化'}
+                    ]
+                },
+                 {
+                    title:'新闻中心',
+                    list:[
+                        {name:'智慧农业'},
+                        {name:'智慧水产养殖'},
+                        {name:'植保信息化'}
+                    ]
+                },
+                 {
+                    title:'新闻中心',
+                    list:[
+                        {name:'智慧农业'},
+                        {name:'智慧水产养殖'},
+                        {name:'植保信息化'}
+                    ]
+                },
+            ],
         })
         const fn = reactive ({
 
         })
         const config = reactive({
-
+            modules: [Navigation],
         })
         /**所有数据处理在此处 */
         const newArr = [...data.whyChooseList]
@@ -191,7 +328,62 @@ export default {
     }
 }
 </script>
+<style>
+/* 轮播图 */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
 
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 自定义导航 */
+.swiper-button-prev:after{
+    display: none;
+}
+.swiper-button-next:after{
+    display: none;
+}
+
+.swiper-button-prev{
+    width: 35px;
+    height: 35px;
+    background: url(../assets/AboutUs/left.png);
+    background-size: 100% 100%;
+    bottom: 15px;
+}
+.swiper-button-next{
+    width: 35px;
+    height: 35px;
+    background:url(../assets/AboutUs/right.png);
+    background-size: 100% 100%;
+    bottom: 15px;
+}
+</style>
 <style lang="less" scoped>
 //小屏
     @media only screen and (min-width:0px) and(max-width:1100px){
@@ -199,10 +391,10 @@ export default {
             display: none !important;
         }
         .aboutUsBox {
-            padding: 0 0 150px;
+            // padding: 0 0 150px;
             .topbackground {
                 height: 477px;
-                margin-bottom: 63px;
+                margin-bottom: 30px;
                 background: url('../assets/AboutUs/minTransfer1.png') no-repeat center center fixed;
                 background-size:100% 100%;
               
@@ -218,17 +410,13 @@ export default {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    margin-bottom: 80px;
+                    margin-bottom: 20px;
                     .name {
-                        font-size: 40px;
+                        font-size: 16px;
                         color: black;
                         span {
                             color: rgba(77, 180, 88, 1);
                         }
-                    }
-                    .ename {
-                        font-size: 24px;
-                        margin-top: 40px;
                     }
                 }
                 .briefIntroduction {
@@ -292,7 +480,7 @@ export default {
                             .title {
                                 font-size: 14px;
                                 color: rgba(77, 180, 88, 1);
-                                margin-bottom: 31px;
+                                margin-bottom: 20px;
                             }
                             .name {
                                 color: black;
@@ -377,12 +565,11 @@ export default {
                             width: 100%;
                             height: 100%;
                         }
-                    }
+                }
             }
             .scopeOfServices {
-                background: #F8F8F8;
+                background: white;
                 padding-top: 87px;
-                padding-bottom: 127px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -444,10 +631,186 @@ export default {
                     }
                 }
             }
+            .ourStrengths {
+                background: white;
+                padding-top:30px ;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .title {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                     margin-bottom: 30px;
+                    // margin-bottom: 148px;
+                    .name {
+                        font-size: 16px;
+                        span {
+                            color: #4DB458;
+                        }
+
+                    }
+                    .ename {
+                        font-size: 24px;
+                    }
+                }
+               .introduce {
+                    display: flex;
+                    padding: 0 22px 0 22px;
+                    flex-direction: column;
+                    align-items: center;
+                    .imgBox {
+                        flex: 1;
+                        margin-bottom: 20px;
+                        img {
+                            width: 100%;
+
+                        }   
+                    }
+                    
+                    .info {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        flex-direction: column;
+                        height: 100%;
+                        .info {
+                            flex: 7;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-end;
+                            font-size: 12px;
+                            color:rgba(2, 9, 28, 0.4) ;
+                            margin-bottom: 20px;
+                        }
+                        .minImgBox {
+                            flex: 3;
+                            width: 100%;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .appearance {
+                background: white;
+                // padding-top:139px ;
+                // padding-bottom: 131px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0 22px 0 22px;
+                margin-bottom: 30px;
+                 .mySwiper {
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: 20px;
+                    .title {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 25px;
+                        background: rgba(79, 201, 135, 0.3);
+                        z-index: 999;
+                        font-size: 14px;
+                        color: white;
+                        margin: 0;
+                    }
+                }
+                 .title {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 29px;
+                    margin-bottom: 31px;
+                    .name {
+                        font-size: 16px;
+
+                        span {
+                            color: #4DB458;
+                        }
+
+                    }
+                    
+                }
+            }
+            .bottomInfo {
+                width: 100%;
+                height: 488px;
+                background: url('../assets/bottombk2.png');
+                background-size: 100% 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+               
+                .info {
+                    width: 62.5%;
+                    display: flex;
+                    border-bottom: 0.5px solid #F0F0F0;
+                    padding-bottom: 30px;
+                    margin-top: 81px;
+                    align-items: center;
+                    flex-direction: column;
+                     .minLeft {
+                        color: white;
+                        font-size: 14px;
+                        .title {
+                            margin-bottom: 42px;
+                        }
+                        .list {
+                            margin-bottom: 10px;
+                        }
+                        .list:last-child {
+                            margin-bottom: 0px;
+                        }
+                    }
+                    .right {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-top: 30px;
+                        .QRCode {
+                            margin-right: 32px;
+                            min-width: 140px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            align-items: center;
+                            img {
+                                width: 88px;
+                                height: 88px;
+                            }
+                            .name {
+                                margin-top: 13px;
+                                color: white;
+                                font-size: 14px;
+                            }
+                                
+                        }
+                        .QRCode:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+                .VersionNumber {
+                    margin-top: 30px;
+                    font-size: 14px;
+                    color: rgba(240, 244, 249, 1);
+                }
+            }
+            
         }
     }
 //大屏
     @media only screen and (min-width:1101px) {
+        
         .min {
             display: none !important;
         }
@@ -627,7 +990,7 @@ export default {
                     }
             }
             .scopeOfServices {
-                background: #F8F8F8;
+                background: white;
                 padding-top: 87px;
                 padding-bottom: 127px;
                 display: flex;
@@ -708,6 +1071,188 @@ export default {
                         }
                     }
                   
+                }
+            }
+            .ourStrengths {
+                background: #F8F8F8;
+                padding-top:139px ;
+                padding-bottom: 131px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                 .title {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 148px;
+                    .name {
+                        font-size: 40px;
+                        margin-bottom: 40px;
+                        span {
+                            color: #4DB458;
+                        }
+
+                    }
+                    .ename {
+                        font-size: 24px;
+                    }
+                }
+                .introduce {
+                    width: 1104px;
+                    height: 560px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .imgBox {
+                        margin-right: 47px;
+                        flex: 1;
+                        height: 100%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+
+                        }   
+                    }
+                    
+                    .info {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-between;
+                        height: 100%;
+                        .imgBox {
+                            flex: 3;
+                            margin-bottom: 30px;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .info {
+                            flex: 7;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-end;
+                            font-size: 20px;
+                            color:rgba(2, 9, 28, 0.4) ;
+                        }
+                        
+                    }
+                }
+            }
+            .appearance {
+                background: white;
+                padding-top:139px ;
+                padding-bottom: 131px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .mySwiper {
+                    width: 1200px;
+                    height: 637px;
+                    overflow: hidden;
+                    border-radius: 20px;
+                    // margin: 0;
+                    .title {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 89px;
+                        background: rgba(79, 201, 135, 0.3);
+                        z-index: 999;
+                        margin: 0;
+                        // transform: translateY(100%);
+                        color: white;
+                    }
+                }
+                 .title {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 81px;
+                    .name {
+                        font-size: 40px;
+                        margin-bottom: 40px;
+                        span {
+                            color: #4DB458;
+                        }
+
+                    }
+                    .ename {
+                        font-size: 24px;
+                    }
+                }
+            }
+             .bottomInfo {
+                width: 100%;
+                height: 480px;
+                background: url('../assets/bottombk1.png');
+                background-size: 100% 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .info {
+                    width: 62.5%;
+                    display: flex;
+                    border-bottom: 0.5px solid #F0F0F0;
+                    padding-bottom: 75px;
+                    margin-top: 81px;
+                    .left {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        color: white;
+                        font-size: 14px;
+                        width: 67%;
+                        margin-right: 107px;
+                        .itemBox {
+                            display: flex;
+                            flex-direction: column;
+                            .title {
+                                margin-bottom: 42px;
+                            }
+                            .list {
+                                margin-bottom: 10px;
+                                cursor: pointer;
+                            }
+                            .list:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                    .right {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        
+                        .QRCode {
+                            margin-right: 32px;
+                            min-width: 140px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            align-items: center;
+                            img {
+                                width: 88px;
+                                height: 88px;
+                            }
+                            .name {
+                                margin-top: 13px;
+                                color: white;
+                                font-size: 14px;
+                            }
+                                
+                        }
+                    }
+                }
+                .VersionNumber {
+                    margin-top: 52px;
+                    font-size: 14px;
+                    color: rgba(240, 244, 249, 1);
                 }
             }
         }
