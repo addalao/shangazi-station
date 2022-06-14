@@ -90,7 +90,7 @@
                 <div class="name">
                     我们的<span>服务</span>
                 </div>
-                <div class='ename'>Our Services</div>
+                <div class='ename max'>Our Services</div>
             </div>
             <!-- <img src="" alt=""> -->
             <div class="imglist">
@@ -137,12 +137,13 @@
                         <div class="ename">Smart Shed Cloud Platform</div>
                     </div>
                     <div class="infoText max">山嘎子智慧农业云平台通过传感设备实时采集农业环境的空气温度、空气湿度、二氧化碳、光照、土壤水分、土壤温度、棚外温度与风速等数据；将数据通过移动通讯网络传输给服务管理平台，服务服管理平台对数据进行分析处理。生产者可及时采取防控措施，降低生产风险；同时在云平台生产者可…山嘎子智慧农业云平台通过传感设备实时采集农业环境的空气温度、空气湿度、二氧化碳、光照、土壤水分.</div>
-                    <div class="btnLayout">
+                    <!-- <div class="btnLayout">
                         <div class="btn">
                             了解更多
                             <img class="icon" src="../assets/whiteRight.png" alt="">
                         </div>
-                    </div>
+                    </div> -->
+                    <maxGreenBtn text="了解更多"></maxGreenBtn>
                     
                 </div>
                 <div class="right">
@@ -179,78 +180,9 @@
             </div>
         </div>
         <!-- 为何选择 -->
-        <div class="WhyChoice">
-            <div class="title">
-                <div class="name">
-                   为什么<span>选择</span>我们
-                </div>
-                <div class='ename max'>Why Choose Us</div>
-            </div>
-            <div class="listBox">
-                <!-- 小屏list -->
-                <div class="mnilist min" v-for="(titem,index) in data.whyChooseList" :key="index">
-                    <div class="left">
-                        <img src="../assets/choseus1.png" alt="">
-                    </div>
-                    <div class="right">
-                        <div class="name">{{titem.name}}</div>
-                        <div class="info">{{titem.info}}</div>
-                    </div>
-                </div>
-                <!-- 大屏 -->
-                <div class="vertical max" v-for="(titem,index) in data.copyArr" :key="index">
-                    <div class="left">
-                        <div class="listItem" v-for="(citem,index) in titem">
-                            <img src="../assets/choseus1.png" alt="">
-                            <div class="name">{{citem.name}}</div>
-                            <div class="ename">{{citem.ename}}</div>
-                            <div class="info">{{citem.info}}</div>
-                        </div>
-                    </div>
-                    <div class="right"></div>
-                </div>
-                
-            </div>
-        </div>
+        <commodityList :List='data.whyChooseList'/>
         <!-- 底部 -->
-        <div class="bottomInfo">
-            <div class="info">
-                <div class="left max">
-                    <div class="itemBox" v-for="(item,index) in data.bottomList">
-                        <div class="title">{{item.title}}</div>
-                        <div class="list" v-for="(citem,index) in item.list">{{citem.name}}</div>
-                    </div>
-                </div>
-                <div class="minLeft min">
-                    <div class="title">
-                        联系我们
-                    </div>
-                    <div class="list">
-                        山嘎子官方微信公众号
-                    </div>
-                    <div class="list">
-                        山嘎子官方微信公众号
-                    </div>
-                    <div class="list">
-                        山嘎子官方微信公众号
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="QRCode">
-                        <img  src="../assets/QRCode1.png" alt="">
-                        <div class="name">山嘎子官方微信公众号</div>
-                    </div>
-                    <div class="QRCode">
-                        <img  src="../assets/QRCode2.png" alt="">
-                        <div class="name">山嘎子官方小程序</div>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="VersionNumber">
-                ©Copyright 2017-2022   鲁ICP备1541743号-9
-            </div>
-        </div>
+        <bottomInfo></bottomInfo>
   </div>
   
 </template>
@@ -263,11 +195,17 @@ import 'swiper/css/autoplay';
 import "swiper/css/grid";
 import { Navigation, Pagination, Scrollbar, A11y,Autoplay,Grid } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/vue";
+import maxGreenBtn from '@/components/maxGreenBtn.vue';
+import bottomInfo from '@/components/bottomInfo.vue';
+import commodityList from '@/components/commodityList.vue';
 export default {
     name: "IndexView",
     components:{
         Swiper,
-        SwiperSlide
+        SwiperSlide,
+        maxGreenBtn,
+        bottomInfo,
+        commodityList
     },
     props: {},
     setup() {
@@ -366,42 +304,42 @@ export default {
               
             ],
             whyChooseList:[
-                {   
-                    imgurl:'',
-                    name:'投标协助',
-                    ename:'Program Design',
-                    info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
-                },
-                {   
-                    imgurl:'',
-                    name:'方案设计',
-                    ename:'Program Design',
-                    info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
-                },
-                {   
-                    imgurl:'',
-                    name:'研发生产',
-                    ename:'Program Design',
-                    info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
-                },
-                {   
-                    imgurl:'',
-                    name:'智能控制',
-                    ename:'Program Design',
-                    info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
-                },
-                {   
-                    imgurl:'',
-                    name:'售后服务',
-                    ename:'Program Design',
-                    info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
-                },
-                {   
-                    imgurl:'',
-                    name:'品类齐全',
-                    ename:'Program Design',
-                    info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
-                },
+                    {   
+                        imgurl:'',
+                        name:'投标协助',
+                        ename:'Program Design',
+                        info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
+                    },
+                    {   
+                        imgurl:'',
+                        name:'方案设计',
+                        ename:'Program Design',
+                        info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
+                    },
+                    {   
+                        imgurl:'',
+                        name:'研发生产',
+                        ename:'Program Design',
+                        info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
+                    },
+                    {   
+                        imgurl:'',
+                        name:'智能控制',
+                        ename:'Program Design',
+                        info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
+                    },
+                    {   
+                        imgurl:'',
+                        name:'售后服务',
+                        ename:'Program Design',
+                        info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
+                    },
+                    {   
+                        imgurl:'',
+                        name:'品类齐全',
+                        ename:'Program Design',
+                        info:'专业的项目经理提供一对一服务，为工程项目实施、管理、政府采购、招投标等提供全程辅佐及结果追踪。',
+                    },
             ],
             bottomList:[
                 {
@@ -481,14 +419,14 @@ export default {
         };
         
 /**所有数据处理在此处 */
-        const newArr = [...data.whyChooseList]
-        const copyArr = []
-        data.whyChooseList.forEach((item) => { 
-            if(newArr.length !== 0){
-                copyArr.push(newArr.splice(0,2))  
-            }
-        })
-        data.copyArr = copyArr
+        // const newArr = [...data.whyChooseList]
+        // const copyArr = []
+        // data.whyChooseList.forEach((item) => { 
+        //     if(newArr.length !== 0){
+        //         copyArr.push(newArr.splice(0,2))  
+        //     }
+        // })
+        // data.copyArr = copyArr
 /********************* */
         return {
             data,
@@ -657,7 +595,7 @@ export default {
     
 </style>
 
-<style scoped lang="less">
+<style lang="less"  scoped>
 //小屏
     @media only screen and (min-width:0px) and(max-width:1100px) {
         .none {
@@ -897,21 +835,16 @@ export default {
                 }
             }
             .welcome {
-                background:#F8F8F8 ;
+                background:white ;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding-top: 140px;
-                padding-bottom: 146px;
+                // padding-top: 140px;
+                // padding-bottom: 146px;
                 .welcomeTitle {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    margin-bottom: 84px;
                     .cname {
-                        font-size: 40px;
-                        margin-bottom: 40px;
+                        font-size: 16px;
                         .colortext {
                             color: rgba(77, 180, 88, 1);
                         }  
@@ -972,17 +905,17 @@ export default {
             }
             .weService {
                 background: white;
-                padding: 136px 0 140px 0 ;
+                padding: 0px 0 0px 0 ;
                
                 .title {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    margin-bottom: 95px;
+                    margin-bottom: 30px;
                     .name {
-                        font-size: 40px;
-                        margin-bottom: 40px;
+                        font-size: 16px;
+                        // margin-bottom: 40px;
                         span {
                             color: #4DB458;
                         }
@@ -1042,17 +975,17 @@ export default {
                 }
             }
             .farm {
-                background: #F8F8F8;
-                padding: 136px 0 140px 0 ; 
+                background: white;
+                padding: 30px 0 0px 0 ; 
                 .title {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    margin-bottom: 95px;
+                    margin-bottom: 30px;
                     .name {
-                        font-size: 40px;
-                        margin-bottom: 40px;
+                        font-size: 16px;
+                        // margin-bottom: 40px;
                         span {
                             color: #4DB458;
                         }
@@ -1202,71 +1135,7 @@ export default {
                     }
                 }
             }
-            .WhyChoice {
-                background: #F8F8F8;
-                padding-top: 87px;
-                padding-bottom: 127px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                .title {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    margin-bottom: 30px;
-                    .name {
-                        font-size: 16px;
-                        span {
-                            color: #4DB458;
-                        }
-
-                    }
-                }
-                .listBox {
-                    .mnilist {
-                        background: #FFFFFF;
-                        box-shadow: 0px 5px 4px rgba(6, 50, 13, 0.15);
-                        border-radius: 15px;
-                        display: flex;
-                        align-items: center;
-                        padding: 32px 20px 32px 31px;
-                        margin:  0 22px 10px 22px;
-                        .left {
-                            max-width: 56px;
-                            height: 56px;
-                            margin-right: 32px;
-                            flex: 1;
-                            img {
-                                width: 100%;
-                                height: 100%;
-                            }
-                        }
-                        .right {
-                            height: 56px;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            flex: 4;
-                            .name {
-                                font-size: 16px;
-                            }
-                            .info {
-                                font-size: 12px;
-                                color: rgba(2, 9, 28, 0.3);
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                display: -webkit-box;
-                                -webkit-line-clamp: 2;
-                                overflow:hidden;
-                                /*! autoprefixer: off */
-                                -webkit-box-orient: vertical;
-
-                            }
-                        }
-                    }
-                }
-            }
+           
             .bottomInfo {
                 width: 100%;
                 height: 488px;
@@ -1785,30 +1654,6 @@ export default {
                             font-size: 20px;
                             color: rgba(2, 9, 28, 0.3);
                         }
-                        .btnLayout {
-                            display: flex;
-                            width: 100%;
-                            justify-content: flex-end;
-                            .btn {
-                                padding: 0 30px 0 32px;
-                                width: 101px;
-                                height: 50px;
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                color: rgba(255, 255, 255, 1);
-                                background: #4BBC6D;
-                                border-radius: 5px;
-                                font-size: 20px;
-                                cursor: pointer;
-                                .icon {
-                                    width: 9px;
-                                    height: 17px;
-                                }
-                            }
-                        }
-                        
-
                     }
                     .right {
                         width: 100%;
@@ -1854,90 +1699,7 @@ export default {
                     }
                 }
             }
-            .WhyChoice {
-                background: #F8F8F8;
-                padding-top: 87px;
-                padding-bottom: 127px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                .title {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    margin-bottom: 87px;
-                    .name {
-                        font-size: 40px;
-                        margin-bottom: 40px;
-                        span {
-                            color: #4DB458;
-                        }
-
-                    }
-                    .ename {
-                        font-size: 24px;
-                    }
-                }
-                .listBox {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    transform: translateX(40px);
-                    .vertical {
-                        height: 639px;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin-right: 60px;
-                        .left {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            align-items: center;
-                            margin-right: 60px;
-                            .listItem {
-                                display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            align-items: center;
-                                 img {
-                                    width: 95px;
-                                    height: 95px;
-                                    margin-bottom: 32px;
-                                }
-                                .name {
-                                    font-size: 24px;
-                                    margin-bottom: 15px;
-                                }
-                                .ename {
-                                    font-size: 16px;
-                                    color: rgba(2, 9, 28, 0.3);
-                                    margin-bottom: 15px;
-                                }
-                                .info {
-                                    font-size: 18px;
-                                    color: rgba(2, 9, 28, 0.3);
-                                    width: 280px;
-                                }
-                            }
-                           
-                        }
-                        .right {
-                            height: 80%;
-                            width: 1px;
-                            background: rgba(2, 9, 28, 0.3);
-                        }
-                    }
-                    .vertical:last-child {
-                        margin-right: 0px;
-                        .right {
-                            display: none;
-                        }
-                    }
-                  
-                }
-            }
+           
             .bottomInfo {
                 width: 100%;
                 height: 480px;

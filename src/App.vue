@@ -68,8 +68,8 @@
           </div>
       </div>
     </div>
-    <router-view></router-view>
   </div>
+    <router-view></router-view>
 </template>
 
 <script>
@@ -181,10 +181,10 @@ export default {
     const get = {
       getNav : async () => {  
          const  res = await axios.get('api/navigationBar/list') 
-         console.log(res)
+        //  console.log(res)
       }
     }
-    get.getNav()
+    // get.getNav()
     //静态配置项
     const config = {}
     return {
@@ -215,7 +215,7 @@ export default {
    }
    .appNav {
     position: relative;
-    min-height: 500px;
+    // min-height: 500px;
     .Navbox {
       position: absolute;
       top: 0;
@@ -312,7 +312,8 @@ export default {
    }
   .appNav {
     position: relative;
-    min-height: 500px;
+    height: auto;
+    // min-height: 98px;
     .Navbox {
       position: absolute;
       top: 0;

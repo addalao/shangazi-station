@@ -72,40 +72,8 @@
                 <img class="min" src="../assets/AboutUs/minTransfer1.png" alt="">
             </div>
         </div>
-         <!-- 我们的服务范围 -->
-        <div class="scopeOfServices">
-            <div class="title">
-                <div class="name">
-                  我们的<span>服务范围</span>
-                </div>
-                <div class='ename max'>Why Choose Us</div>
-            </div>
-            <div class="listBox">
-                <!-- 小屏list -->
-                <div class="mnilist min" v-for="(titem,index) in data.whyChooseList" :key="index">
-                    <div class="left">
-                        <img src="../assets/choseus1.png" alt="">
-                    </div>
-                    <div class="right">
-                        <div class="name">{{titem.name}}</div>
-                        <div class="info">{{titem.info}}</div>
-                    </div>
-                </div>
-                <!-- 大屏 -->
-                <div class="vertical max" v-for="(titem,index) in data.copyArr" :key="index">
-                    <div class="left">
-                        <div class="listItem" v-for="(citem,index) in titem">
-                            <img src="../assets/choseus1.png" alt="">
-                            <div class="name">{{citem.name}}</div>
-                            <div class="ename">{{citem.ename}}</div>
-                            <div class="info">{{citem.info}}</div>
-                        </div>
-                    </div>
-                    <div class="right"></div>
-                </div>
-                
-            </div>
-        </div>
+        <!-- 我们的服务范围 -->
+        <commodityList :List='data.whyChooseList'/>
         <!-- 我们的优势 -->
         <div class="ourStrengths">
             <div class="title">
@@ -160,45 +128,7 @@
                 </div>
             </swiper>
         </div>
-         <!-- 底部 -->
-        <div class="bottomInfo">
-            <div class="info">
-                <div class="left max">
-                    <div class="itemBox" v-for="(item,index) in data.bottomList">
-                        <div class="title">{{item.title}}</div>
-                        <div class="list" v-for="(citem,index) in item.list">{{citem.name}}</div>
-                    </div>
-                </div>
-                <div class="minLeft min">
-                    <div class="title">
-                        联系我们
-                    </div>
-                    <div class="list">
-                        山嘎子官方微信公众号
-                    </div>
-                    <div class="list">
-                        山嘎子官方微信公众号
-                    </div>
-                    <div class="list">
-                        山嘎子官方微信公众号
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="QRCode">
-                        <img  src="../assets/QRCode1.png" alt="">
-                        <div class="name">山嘎子官方微信公众号</div>
-                    </div>
-                    <div class="QRCode">
-                        <img  src="../assets/QRCode2.png" alt="">
-                        <div class="name">山嘎子官方小程序</div>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="VersionNumber">
-                ©Copyright 2017-2022   鲁ICP备1541743号-9
-            </div>
-        </div>
+            <bottomInfo/>
     </div>
 </template>
 
@@ -207,10 +137,14 @@ import { reactive } from 'vue'
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
+import bottomInfo from '@/components/bottomInfo.vue';
+import commodityList from '@/components/commodityList.vue';
 export default {
     
     name: "aboutUs",
     components:{
+        bottomInfo,
+        commodityList
     },
     props: {},
     setup(){
@@ -223,7 +157,7 @@ export default {
             demolist:[
                 1,2,3,4,5
             ],
-             whyChooseList:[
+            whyChooseList:[
                 {   
                     imgurl:'',
                     name:'投标协助',
