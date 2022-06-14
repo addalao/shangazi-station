@@ -1,3 +1,0 @@
-<template>
-cooperation
-</template>
